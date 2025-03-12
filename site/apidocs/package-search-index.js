@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"ru.farpost"},{"l":"ru.farpost.components"},{"l":"ru.farpost.controller"},{"l":"ru.farpost.dto"},{"l":"ru.farpost.exception"},{"l":"ru.farpost.model"},{"l":"ru.farpost.repository"},{"l":"ru.farpost.service"},{"l":"ru.farpost.utils"}];updateSearchResults();

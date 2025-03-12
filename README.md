@@ -18,9 +18,14 @@ JavaBackendTest/
 │   ├── service/                         # Бизнес-логика приложения
 │   ├── utils/                           # Вспомогательные утилиты
 │   ├── JavaBackendTestApplication.java  # Главный класс приложения
+│
 ├── src/main/resources/
 │   ├── application.properties           # Конфигурация Spring Boot для подключения к БД
 │   ├── application.yml                  # Конфигурация Spring Boot для списка стоп-слов
+│
+├── site/apidocs/
+│   ├──index.html                        # Документация по проекту
+│                       
 ├── pom.xml                              # Зависимости Maven
 └── README.md                            # Этот файл
 ```

@@ -1,0 +1,9 @@
+ru.farpost
+ru.farpost.components
+ru.farpost.controller
+ru.farpost.dto
+ru.farpost.exception
+ru.farpost.model
+ru.farpost.repository
+ru.farpost.service
+ru.farpost.utils
