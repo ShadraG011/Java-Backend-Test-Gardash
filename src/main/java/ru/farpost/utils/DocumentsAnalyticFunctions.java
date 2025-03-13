@@ -38,9 +38,9 @@ public class DocumentsAnalyticFunctions {
         Set<String> stopWords = new HashSet<>(stopWordsUtil.getWords());
         String[] words =
                 text
-                .replaceAll("[^a-zA-Zа-яА-ЯёЁ\\s]", "")
-                .toLowerCase()
-                .split("\\s+");
+                        .replaceAll("[^a-zA-Zа-яА-ЯёЁ\\s]", "")
+                        .toLowerCase()
+                        .split("\\s+");
         return Arrays.stream(words).filter(word -> !stopWords.contains(word)).toList();
     }
 
@@ -60,12 +60,12 @@ public class DocumentsAnalyticFunctions {
      *
      * @param text текст документа, по которому необходимо вычислить статистику.
      * @return карта, содержащая ключевые метрики текста:
-     *         <ul>
-     *             <li>{@code word_count} – общее количество слов.</li>
-     *             <li>{@code uniq_word_count} – количество уникальных слов.</li>
-     *             <li>{@code avg_word_length} – средняя длина слова.</li>
-     *             <li>{@code sentences_count} – количество предложений.</li>
-     *         </ul>
+     * <ul>
+     *     <li>{@code word_count} – общее количество слов.</li>
+     *     <li>{@code uniq_word_count} – количество уникальных слов.</li>
+     *     <li>{@code avg_word_length} – средняя длина слова.</li>
+     *     <li>{@code sentences_count} – количество предложений.</li>
+     * </ul>
      */
     public Map<String, Integer> getDocumentStatistic(String text) {
 
@@ -91,7 +91,7 @@ public class DocumentsAnalyticFunctions {
      * Поиск осуществляется по нормализованному тексту документов.
      *
      * @param documents список документов, среди которых выполняется поиск.
-     * @param word слово, которое необходимо найти в документах.
+     * @param word      слово, которое необходимо найти в документах.
      * @return список идентификаторов документов, содержащих указанное слово.
      */
     public List<Long> getDocumentIdByWords(List<Document> documents, String word) {
@@ -113,13 +113,13 @@ public class DocumentsAnalyticFunctions {
      *
      * @param documents список документов, по которым необходимо вычислить общую статистику.
      * @return карта, содержащая ключевые метрики для всех документов:
-     *         <ul>
-     *             <li>{@code documents_count} – количество документов.</li>
-     *             <li>{@code word_count} – общее количество слов.</li>
-     *             <li>{@code uniq_word_count} – количество уникальных слов.</li>
-     *             <li>{@code avg_word_length} – средняя длина слова.</li>
-     *             <li>{@code sentences_count} – количество предложений.</li>
-     *         </ul>
+     * <ul>
+     *     <li>{@code documents_count} – количество документов.</li>
+     *     <li>{@code word_count} – общее количество слов.</li>
+     *     <li>{@code uniq_word_count} – количество уникальных слов.</li>
+     *     <li>{@code avg_word_length} – средняя длина слова.</li>
+     *     <li>{@code sentences_count} – количество предложений.</li>
+     * </ul>
      */
     public Map<String, Integer> getAllDocumentStatistic(List<Document> documents) {
 
@@ -172,4 +172,17 @@ public class DocumentsAnalyticFunctions {
 
     }
 
+    public Map<String, Integer> getBigramsInDocument(String text) {
+        List<String> normalizedWords = getNormalizeWords(text);
+        int wordsCount = normalizedWords.size();
+        int bigramsCount = 0;
+        String bigram = null;
+        for (int i = 0; i < wordsCount - 2; i++) {
+            bigram = normalizedWords.get(i) + " " + normalizedWords.get(i + 1);
+            for (int j = 0; j <; j++) {
+
+            }
+        }
+
+    }
 }

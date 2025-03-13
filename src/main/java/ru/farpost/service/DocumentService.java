@@ -138,4 +138,8 @@ public class DocumentService {
         return analyticFunctions.getDocumentIdByWords(documents, word);
     }
 
+    public Map<String, Integer> getBigramsInDocument(Long id) {
+        Document document = documentRepository.findById(id).orElseThrow(() -> new ErrorResponse(ExceptionsMessage.DOCUMENT_NOT_FOUND));
+        return analyticFunctions.getBigramsInDocument(document.getText());
+    }
 }
